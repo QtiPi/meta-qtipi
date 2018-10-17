@@ -1,0 +1,30 @@
+This README file contains information on the contents of the
+qtipi layer.
+
+Please see the corresponding sections below for details.
+
+Dependencies
+============
+
+This layer depends on:
+  
+  URI: git://git.yoctoproject.org/poky
+  branch: sumo
+
+  URI: git://git.openembedded.org/openembedded-core
+  layers: meta-oe, meta-multimedia
+  branch: sumo
+
+  URI: git://git.yoctoproject.org/meta-raspberrypi
+  branch: sumo
+  
+  URI: https://github.com/meta-qt5/meta-qt5.git
+  branch: sumo
+
+
+Patches
+=======
+
+Maintainer: Erik Botö< erik.boto@gmail.com>
+
+Please use GitHub Pull Request to submit patches.
