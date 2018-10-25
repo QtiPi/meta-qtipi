@@ -8,8 +8,8 @@ SRC_URI = " \
 LIC_FILES_CHKSUM = "file://20-eth0.network;md5=c8b3bdd8ab8bf2b8690f755bf581d199"
 S = "${WORKDIR}"
 
-QTIPI_SSID = "example-ssid"
-QTIPI_PASSKEY = "example-passkey"
+QTIPI_SSID ?= "example-ssid"
+QTIPI_PASSKEY ?= "example-passkey"
 
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
