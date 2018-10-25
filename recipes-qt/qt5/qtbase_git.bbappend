@@ -11,10 +11,10 @@ PACKAGECONFIG = " \
     ${PACKAGECONFIG_SYSTEM} \
     ${PACKAGECONFIG_MULTIMEDIA} \
     ${PACKAGECONFIG_DISTRO} \
-    gles2 icu alsa eglfs fontconfig mtdev \
+    gles2 icu alsa eglfs fontconfig mtdev accessibility \
 "
 
 EXTRA_OECONF += "'-I${STAGING_DIR_TARGET}/usr/include/interface/vcos/pthreads/' \
                  '-I${STAGING_DIR_TARGET}/usr/include/interface/vmcs_host/linux/'" 
 
-EXTRA_OECONF += " -qpa eglfs "
+QT_CONFIG_FLAGS += " -qpa eglfs "
