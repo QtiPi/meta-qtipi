@@ -10,7 +10,6 @@ IMAGE_ROOTFS_EXTRA_SPACE = "1048576"
 # System tools
 IMAGE_INSTALL += " \
     systemd-analyze \
-    network-config \
     openssh-sftp-server \
     avahi-daemon \
 "

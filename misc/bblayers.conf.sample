@@ -9,6 +9,8 @@ BBLAYERS ?= " \
     ${BSPDIR}/sources/poky/meta-yocto-bsp \
     ${BSPDIR}/sources/meta-openembedded/meta-oe \
     ${BSPDIR}/sources/meta-openembedded/meta-multimedia \
+    ${BSPDIR}/sources/meta-openembedded/meta-python \
+    ${BSPDIR}/sources/meta-openembedded/meta-networking \
     ${BSPDIR}/sources/meta-raspberrypi \
     ${BSPDIR}/sources/meta-qt5 \
     ${BSPDIR}/sources/meta-qtipi \
