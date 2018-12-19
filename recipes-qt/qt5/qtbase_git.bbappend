@@ -10,7 +10,7 @@ PACKAGECONFIG = " \
     ${PACKAGECONFIG_FONTS} \
     ${PACKAGECONFIG_SYSTEM} \
     ${PACKAGECONFIG_DISTRO} \
-    gles2 icu alsa eglfs fontconfig mtdev accessibility \
+    gles2 icu eglfs fontconfig mtdev accessibility \
 "
 
 EXTRA_OECONF += "'-I${STAGING_DIR_TARGET}/usr/include/interface/vcos/pthreads/' \
