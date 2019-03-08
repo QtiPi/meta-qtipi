@@ -7,6 +7,10 @@ SRC_URI = " \
     file://wpa_supplicant-wlan0.conf \
     file://hostapd-qtipi.conf \
     file://dnsmasq-qtipi \
+    file://avahi-daemon-eth0.conf \
+    file://avahi-daemon-wlan0.conf \
+    file://avahi-eth0.conf \
+    file://avahi-wlan0.conf \
 "
 LIC_FILES_CHKSUM = "file://20-eth0.network;md5=c8b3bdd8ab8bf2b8690f755bf581d199"
 S = "${WORKDIR}"
@@ -31,6 +35,11 @@ do_install() {
     install -Dm0644 ${WORKDIR}/dnsmasq-qtipi ${D}/etc/dnsmasq.d/dnsmasq-qtipi
     install -Dm0644 ${WORKDIR}/hostapd-qtipi.conf ${D}/etc/hostapd-qtipi.conf
 
+    install -Dm0644 ${WORKDIR}/avahi-daemon-wlan0.conf ${D}/etc/avahi/avahi-daemon-wlan0.conf
+    install -Dm0644 ${WORKDIR}/avahi-daemon-eth0.conf ${D}/etc/avahi/avahi-daemon-eth0.conf
+    install -Dm0644 ${WORKDIR}/avahi-wlan0.conf ${D}/lib/systemd/system/avahi-daemon.service.d/avahi-wlan0.conf
+    install -Dm0644 ${WORKDIR}/avahi-eth0.conf ${D}/lib/systemd/system/avahi-daemon.service.d/avahi-eth0.conf
+
     sed 's,####SSID####,${QTIPI_SSID},' -i ${D}/etc/wpa_supplicant/wpa_supplicant-wlan0.conf
     sed 's,####PASSKEY####,${QTIPI_PASSKEY},' -i ${D}/etc/wpa_supplicant/wpa_supplicant-wlan0.conf
 
@@ -43,13 +52,17 @@ do_install() {
 }
 
 FILES_${PN}-wifi-client = " \
+    /etc/avahi/avahi-daemon-wlan0.conf \
     /lib/systemd/system/multi-user.target.wants/wpa_supplicant@wlan0.service \
     /lib/systemd/network/25-wlan0-dhcp.network \
     /etc/wpa_supplicant/* \
+    /lib/systemd/system/avahi-daemon.service.d/avahi-wlan0.conf \
 "
 
 FILES_${PN}-eth-client = " \
+    /etc/avahi/avahi-daemon-eth0.conf \
     /lib/systemd/network/20-eth0.network \
+    /lib/systemd/system/avahi-daemon.service.d/avahi-eth0.conf \
 "
 
 FILES_${PN}-wifi-ap = " \
