@@ -16,7 +16,6 @@ IMAGE_INSTALL += " \
 
 # Pi specific packages
 IMAGE_INSTALL += " \
-    wiringpi \
     rpi-gpio \
 "
 
