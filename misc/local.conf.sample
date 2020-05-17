@@ -235,7 +235,6 @@ ASSUME_PROVIDED += "libsdl-native"
 # this doesn't mean anything to you.
 CONF_VERSION = "1"
 MACHINE = "raspberrypi3"
-PREFERRED_VERSION_linux-raspberrypi = "4.%"
 DISTRO_FEATURES_remove = "x11 wayland"
 DISTRO_FEATURES_append = " systemd"
 VIRTUAL-RUNTIME_init_manager = "systemd"
