@@ -1,0 +1,22 @@
+From 1279ffadf243e49926c34471a369137dd47966fa Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Erik=20Bot=C3=B6?= <erik.boto@gmail.com>
+Date: Mon, 25 May 2020 08:57:30 +0200
+Subject: [PATCH] systemd: Make wait-online return when any interface is online
+
+---
+ units/systemd-networkd-wait-online.service.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/units/systemd-networkd-wait-online.service.in b/units/systemd-networkd-wait-online.service.in
+index 7666e16669..0d4f09ef1e 100644
+--- a/units/systemd-networkd-wait-online.service.in
++++ b/units/systemd-networkd-wait-online.service.in
+@@ -18,7 +18,7 @@ Before=network-online.target shutdown.target
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=@rootlibexecdir@/systemd-networkd-wait-online
++ExecStart=@rootlibexecdir@/systemd-networkd-wait-online --any
+ RemainAfterExit=yes
+ 
+ [Install]
