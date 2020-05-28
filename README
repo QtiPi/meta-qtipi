@@ -9,17 +9,20 @@ Dependencies
 This layer depends on:
   
   URI: git://git.yoctoproject.org/poky
-  branch: sumo
+  branch: dunfell
 
   URI: git://git.openembedded.org/openembedded-core
-  layers: meta-oe, meta-multimedia
-  branch: sumo
+  layers: meta-oe, meta-multimedia, meta-python, meta-networking
+  branch: dunfell
 
   URI: git://git.yoctoproject.org/meta-raspberrypi
-  branch: sumo
+  branch: dunfell
   
-  URI: https://github.com/meta-qt5/meta-qt5.git
-  branch: sumo
+  URI: git://git.openembedded.org/meta-python2
+  branch: dunfell
+  
+  URI: https://code.qt.io/yocto/meta-qt5
+  branch: 5.15
 
 
 Patches
