@@ -19,28 +19,8 @@ IMAGE_INSTALL += " \
     rpi-gpio \
 "
 
-# Qt Packages
-IMAGE_INSTALL += " \
-    qtbase \
-    qtbase-plugins \
-    qtdeclarative \
-    qtdeclarative-tools \
-    qtmultimedia \
-    qtwebengine \
-    qtsvg \
-    qtserialport \
-    qtquickcontrols \
-    qtmqtt \
-    qtimageformats \
-    qtxmlpatterns \
-    qtwebsockets \
-    qtsensors \
-    qtlocation \
-    qtquickcontrols2 \
-    qt3d \
-    liberation-fonts \
-    qmllive \
-"
+# Some useful Qt packages
+IMAGE_INSTALL += "qtipi-bundle"
 
 # Example application
 IMAGE_INSTALL += "touchpoints"
