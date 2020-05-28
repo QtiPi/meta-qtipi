@@ -47,8 +47,8 @@ do_install() {
     sed 's,####PASSKEY####,${QTIPI_PASSKEY},' -i ${D}/etc/hostapd-qtipi.conf
 
     install -d ${D}/${systemd_unitdir}/system/multi-user.target.wants/
-    ln -sf /lib/systemd/system/wpa_supplicant@.service ${D}/${systemd_unitdir}/system/multi-user.target.wants/wpa_supplicant@wlan0.service
-    ln -sf /lib/systemd/system/hostapd.service ${D}/${systemd_unitdir}/system/multi-user.target.wants/hostadp.service
+    ln -sf ../wpa_supplicant@.service ${D}/${systemd_unitdir}/system/multi-user.target.wants/wpa_supplicant@wlan0.service
+    ln -sf ../hostapd.service ${D}/${systemd_unitdir}/system/multi-user.target.wants/hostapd.service
 }
 
 FILES_${PN}-wifi-client = " \
@@ -69,7 +69,7 @@ FILES_${PN}-wifi-ap = " \
     /lib/systemd/network/25-wlan0-static.network \
     /etc/dnsmasq.d/dnsmasq-qtipi \
     /etc/hostapd-qtipi.conf \
-    /lib/systemd/system/multi-user.target.wants/hostadp.service \
+    /lib/systemd/system/multi-user.target.wants/hostapd.service \
 "
 
 RDEPENDS_${PN}-wifi-ap += "hostapd dnsmasq"
