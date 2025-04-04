@@ -1,1 +1,1 @@
-PACKAGECONFIG_remove = "vulkan gl"
+PACKAGECONFIG:remove = "vulkan gl"
